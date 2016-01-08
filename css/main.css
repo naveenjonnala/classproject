@@ -1,0 +1,85 @@
+header{width: auto;height: 80px;
+    background-color: white;
+    color: goldenrod;
+    padding: 5px;}
+
+img.logo{
+    float: left;
+    width: 300px; height: 80px;
+}
+img.home{
+    align-content: space-around;
+    width:20px;height: 18px; 
+}
+img.background{ 
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: cover;}
+h3{
+    float: right;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #555555;
+}
+
+ul li {
+    float: right;
+}
+
+ul li a.header {
+    display: block;
+    color: white;
+    text-align: center;
+    padding:10px 70px ;
+    text-decoration: none;
+}
+
+ul li a.header:hover:not(.active) {
+    text-decoration-style: wavy;
+    background-color: black;
+}
+
+.active {
+    background-color: #4CAF50;
+        }	
+nav {
+    list-style-type: none;
+    line-height:30px;
+    background-color:whitesmoke;
+    height:505px;
+    width:210px;
+    overflow: scroll;
+    float: left;
+    padding:5px; 
+}
+nav li a.nav{
+    color: black;
+    text-align: left;
+    text-decoration: none;
+}
+h2.nav{
+    text-decoration: none;
+    display: block;
+    color: #555555;
+}
+div.register{align-content: space-around;}
+
+section {
+    width:350px;
+    float:left;
+    padding:10px; 
+}
+footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:5px; 
+}

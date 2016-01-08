@@ -1,0 +1,63 @@
+<html>
+    <head> 
+        <link rel= "stylesheet" href="css/main.css"/>
+    </head>
+    
+    
+<div>
+<form style="float:left">
+<fieldset>
+<legend>Sign Up</legend>
+<table>
+<tr>
+<th>First Name</th>
+<td><input type="text" name="first name" placeholder="First Name" size="20" autofocus required>
+</td>
+</tr>
+<tr>
+<th>Last Name</th>
+<td><input type="text" name="last name" placeholder="Last Name" size="20" required>
+</td>
+</tr>
+<tr>
+<th>DOB</th>
+<td><input type="date" name="dob" max="2005-12-31"></td>
+</tr>
+<tr>
+<th>Email Address</th>
+<td><input type="email" name="E-mail" placeholder="E-mail" size="20" required>
+</td>
+</tr>
+<tr>
+<th>Password</th>
+<td><input type="password" name="psw" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required></td>
+</tr>
+<tr>
+<th>Upload Resume</th>
+<td><input type="file" name="Resume" multiple></td>
+</tr>
+<tr>
+<th>Sex</th>
+<td><input type="radio" name="sex" value="male" checked>Male<input type="radio" name="sex" value="female">Female</td>
+</tr>
+<tr>
+<th> Class Session</th>
+<td><input type="checkbox" name="class" value="In class">In Class<input type="checkbox" name="Online" value=" Online">Online</td>
+</tr>
+<tr>
+<th>Technology</th>
+<td><select name="Technology">
+<option value="Java">Java</option>
+<option value="UI">UI</option>
+<option value="LDAP">LDAP</option>
+<option value="Admin">Admin</option></select>
+</tr>
+<tr>
+<td colspan="2" ><input type="image" src="http://downloadiconsfree.com/wp-content/uploads/2013/10/SIGN-UP-.png" width="100px" height="30px" value="Submit" name="b1" onclick="alert('Cannot connect to the server')"  autofocus><input type="image"  src="http://s22.postimg.org/ny6mtonwh/cutmypic.png" width="100px" height="30px" value="Reset" name="r1"><td>
+</tr>
+</table>
+</fieldset>
+</form>
+</div>
+
+</html>
