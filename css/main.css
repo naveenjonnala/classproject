@@ -50,6 +50,8 @@ ul li a.header:hover:not(.active) {
     background-color: #4CAF50;
         }	
 nav {
+    font-size: 30px;
+    
     list-style-type: none;
     line-height:30px;
     background-color:whitesmoke;
