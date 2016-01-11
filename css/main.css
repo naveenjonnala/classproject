@@ -1,13 +1,13 @@
+@charset "utf-8";
+body{ font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;font-size:12px; background:#252121; color:#fff;}
 header{width: auto;height: 80px;
     background-color: white;
     color: goldenrod;
     padding: 5px;}
 
-img.logo{
-    float: left;
-    width: 300px; height: 80px;
-}
-img.home{
+.logo{float: left;width: 300px; height: 80px;}
+.search{float: right;padding-top: 10px;}
+.home{
     align-content: space-around;
     width:20px;height: 18px; 
 }
@@ -16,6 +16,7 @@ img.background{
     background-repeat: no-repeat;
     background-position: right top;
     background-size: cover;}
+
 h3{
     float: right;
 }
@@ -30,10 +31,11 @@ ul {
 }
 
 ul li {
-    float: right;
+    float:left;
 }
 
 ul li a.header {
+    margin-left: 20px;
     display: block;
     color: white;
     text-align: center;
@@ -55,7 +57,7 @@ nav {
     list-style-type: none;
     line-height:30px;
     background-color:whitesmoke;
-    height:505px;
+    height:100%;
     width:210px;
     overflow: scroll;
     float: left;
@@ -71,7 +73,7 @@ h2.nav{
     display: block;
     color: #555555;
 }
-div.register{align-content: space-around;}
+.register{align-content: space-around;}
 
 section {
     width:350px;
