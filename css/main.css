@@ -4,7 +4,6 @@ header{width: auto;height: 80px;
     background-color: white;
     color: goldenrod;
     padding: 5px;}
-
 .logo{float: left;width: 300px; height: 80px;}
 .search{float: right;padding-top: 10px;}
 .home{
@@ -20,6 +19,7 @@ img.background{
 h3{
     float: right;
 }
+h2{font-size: 35px;}
 
 
 ul {
@@ -61,7 +61,7 @@ nav {
     width:auto;
     overflow: hidden;
     float: left;
-    padding:; 
+    padding-right: 10px; 
 }
 .nav:hover{}
 nav li a.nav{
