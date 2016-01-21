@@ -1,0 +1,80 @@
+<html>
+<head>
+  <script type="text/javascript">
+    (function()
+    {
+        var courses = {
+            name: "",
+            duration:0,
+            fee: 0,
+            level: ""
+        };
+
+        var storageLogic = {
+            saveItem: function (){
+                var lscount = localStorage.length;
+                var inputs = document.getElementsByClassName("data");
+                courses.name = inputs[0].value;
+                courses.duration = inputs[1].value;
+                courses.fee = inputs[2].value;
+                courses.level = inputs[3].value;
+
+                localStorage.setItem("courses_" + lscount, JSON.stringify(courses));
+                location.reload();
+
+            },
+
+            loaddata: function() {
+                var datacount = localStorage.length;
+                if (datacount > 0)
+                {
+                    var render = "<table border='1'>";
+                    render += "<tr><th>Name</th><th>Duration</th><th>Fee</th>" + 
+                    "<th>Email</th>";
+                    for (i=0; i < datacount; i++) {
+                        var key = localStorage.key(i);
+                        var courses = localStorage.getItem(key);
+                        var data = JSON.parse(courses);
+
+                        render += "<tr><td>" + data.lname + "</td><td>" + data.duration + "</td>";
+                        render += "<td>" + data.fee + "</td>";
+                        render += "<td>" + data.level + "</td>";
+                    }
+                    render += "</table>";
+                    var newTable = document.getElementById("storage_table");
+                    newTable.innerHTML = render;
+                }
+            }
+        };
+        window.onload = function() {
+            storageLogic.loaddata();
+      var btnsubmit = document.getElementById('submit');
+      btnsubmit.addEventListener('click', storageLogic.saveItem, false);
+        };
+    })();
+  </script>
+    
+    </head>   
+    
+    
+ <body>
+     <div id="Courses">
+      <form id="information">
+        Name:&nbsp;<input class="data" type="text" name="name"><br>
+        Duration:<input class="data" type="text" name="duration"><br>
+        Fee:<input class="data" type="text" name="fee"><br>
+        Level:<select class="data">
+            <option value="Basic">Basic</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Hard">Hard</option>
+            <option value="Extreme">Extreme</option>
+             </select><br> <br>
+        <input id = "submit" type="submit" value="Save" onclick ="AddData()">
+        <input type="submit"  value="Reset" onClick="this.form.reset()">
+      </form>
+      <div id="storage_table">
+       
+    
+    </div>     
+</body>
+</html>
