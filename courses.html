@@ -4,10 +4,10 @@
     (function()
     {
         var courses = {
-            name: "",
+            name:"",
             duration:0,
             fee: 0,
-            level: ""
+            level:""
         };
 
         var storageLogic = {
@@ -30,13 +30,13 @@
                 {
                     var render = "<table border='1'>";
                     render += "<tr><th>Name</th><th>Duration</th><th>Fee</th>" + 
-                    "<th>Email</th>";
+                    "<th>Level</th>";
                     for (i=0; i < datacount; i++) {
                         var key = localStorage.key(i);
                         var courses = localStorage.getItem(key);
                         var data = JSON.parse(courses);
 
-                        render += "<tr><td>" + data.lname + "</td><td>" + data.duration + "</td>";
+                        render += "<tr><td>" + data.name + "</td><td>" + data.duration + "</td>";
                         render += "<td>" + data.fee + "</td>";
                         render += "<td>" + data.level + "</td>";
                     }
