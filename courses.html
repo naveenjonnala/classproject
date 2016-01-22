@@ -1,80 +1,100 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <script type="text/javascript">
-    (function()
-    {
-        var courses = {
-            name:"",
-            duration:0,
-            fee: 0,
-            level:""
-        };
+    </head>
+    <link rel="stylesheet" href="form.css">
+    <body>
+        
+        <form name="form" id="formid" style="display:none">
+            Name : 
+            <input type="text" id="Name" placeholder="Enter your Name" required></br>
+            Duration :
+        <input type="text" id="Duration" placeholder="Duration of course" required></br>
+            Fee :
+        <input type="text" id="Fee" placeholder="Fee for this course" required></br>
+            Level :
+<select id="Level">
+    <option value="None">Select Level</option>
+<option value="Beginner">Beginner</option>
+    <option value="Intermediate">Intermediate</option>
+<option value="Hard">Hard</option>
+<option value="Advanced">Advanced</option>
 
-        var storageLogic = {
-            saveItem: function (){
-                var lscount = localStorage.length;
-                var inputs = document.getElementsByClassName("data");
-                courses.name = inputs[0].value;
-                courses.duration = inputs[1].value;
-                courses.fee = inputs[2].value;
-                courses.level = inputs[3].value;
+</select></br>
+<input type="button" value="Submit" onclick="addContent()">
+<input type="button" value="reset" onclick="clearAll()"></br>
 
-                localStorage.setItem("courses_" + lscount, JSON.stringify(courses));
-                location.reload();
+        </form>
 
-            },
+<input type="button" value="Add Course" id="courses" onclick="formDisplay()">
+    <table border="2" id="results" style="width:50%">
+        <tr>
+        <td>Name</td>
+        <td>Duration</td>
+        <td>Fee</td>
+            <td>Level</td>
+        </tr>
+        
+        
+        </table>
+<script>
+function addContent(){
 
-            loaddata: function() {
-                var datacount = localStorage.length;
-                if (datacount > 0)
-                {
-                    var render = "<table border='1'>";
-                    render += "<tr><th>Name</th><th>Duration</th><th>Fee</th>" + 
-                    "<th>Level</th>";
-                    for (i=0; i < datacount; i++) {
-                        var key = localStorage.key(i);
-                        var courses = localStorage.getItem(key);
-                        var data = JSON.parse(courses);
-
-                        render += "<tr><td>" + data.name + "</td><td>" + data.duration + "</td>";
-                        render += "<td>" + data.fee + "</td>";
-                        render += "<td>" + data.level + "</td>";
-                    }
-                    render += "</table>";
-                    var newTable = document.getElementById("storage_table");
-                    newTable.innerHTML = render;
-                }
-            }
-        };
-        window.onload = function() {
-            storageLogic.loaddata();
-      var btnsubmit = document.getElementById('submit');
-      btnsubmit.addEventListener('click', storageLogic.saveItem, false);
-        };
-    })();
-  </script>
+    var table = document.getElementById('results');
+    var row = document.createElement('tr');
+    var td1 = document.createElement('td');
+    var td2 = document.createElement('td');
+    var td3 = document.createElement('td');
+    var td4 = document.createElement('td');
+    var name = document.getElementById("Name").value;
     
-    </head>   
+   /* var nameLink = document.createElement("a");
+    a.href = "topics.html?courseName=" + Name;
+    a.innerHTML = Name;
     
+    td1.appendChild(nameLink); */
+    td1.innerHTML = '<a href="topics.html?courseName=' + name + '">' + name + '</a>';
+    td2.innerHTML = document.getElementById('Duration').value;
+    td3.innerHTML = document.getElementById('Fee').value;
+    td4.innerHTML = document.getElementById('Level').value;
+
+    row.appendChild(td1);
+    row.appendChild(td2);
+    row.appendChild(td3);
+    row.appendChild(td4);
+
+    table.children[0].appendChild(row);
     
- <body>
-     <div id="Courses">
-      <form id="information">
-        Name:&nbsp;<input class="data" type="text" name="name"><br>
-        Duration:<input class="data" type="text" name="duration"><br>
-        Fee:<input class="data" type="text" name="fee"><br>
-        Level:<select class="data">
-            <option value="Basic">Basic</option>
-            <option value="Intermediate">Intermediate</option>
-            <option value="Hard">Hard</option>
-            <option value="Extreme">Extreme</option>
-             </select><br> <br>
-        <input id = "submit" type="submit" value="Save" onclick ="AddData()">
-        <input type="submit"  value="Reset" onClick="this.form.reset()">
-      </form>
-      <div id="storage_table">
-       
+    showResults();
+
+}
     
-    </div>     
-</body>
+    function clearAll(){
+        
+        document.form1.Name.value = " ";
+        document.form1.Duration.value = " ";
+        document.form1.Fee.value = " ";
+        document.form1.Level.value = " ";
+
+        }
+    
+function formDisplay(){
+    // Show the form
+    
+    // Hide the table
+    document.getElementById("formid").style.display ="block";
+    document.getElementById("courses").style.display = "none";
+    document.getElementById("results").style.display = "none";
+}
+    
+    function showResults(){
+        document.getElementById("formid").style.display ="none";
+    document.getElementById("courses").style.display = "block";
+        document.getElementById("results").style.display = "block";
+        
+        
+    }
+        
+</script>
+     </body>
 </html>
