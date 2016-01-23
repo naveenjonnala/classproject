@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel= "stylesheet" href="css/main.css"/>
+    <link rel= "stylesheet" href="css/courses.css.css"/>
     </head>
-    <link rel="stylesheet" href="form.css">
+    
     <body>
         
         <form name="form" id="formid" style="display:none">
             Name : 
-            <input type="text" id="Name" placeholder="Enter your Name" required></br>
+            <input type="text" id="Name" placeholder="Enter Course Name" required></br>
             Duration :
         <input type="text" id="Duration" placeholder="Duration of course" required></br>
             Fee :
@@ -91,8 +93,7 @@ function formDisplay(){
         document.getElementById("formid").style.display ="none";
     document.getElementById("courses").style.display = "block";
         document.getElementById("results").style.display = "block";
-        
-        
+            
     }
         
 </script>

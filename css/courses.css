@@ -1,4 +1,4 @@
-//* {
+* {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
@@ -9,29 +9,57 @@
 html {
 	height: 100%;
 	background: white;
-	background: radial-gradient(circle, #FFF 10%, #ccc);
+	background: radial-gradient(circle, #444422 10%, #ccc);
 	background-size: cover;
 }
-#courses{
-    width: 325px;
-	height: auto;
-	margin: 100px auto;
-	padding: 20px 20px 9px;
-	
-	background: #9dd2ea;
-	background: linear-gradient(#9dd2ea, #8bceec);
-	border-radius: 3px;
-	box-shadow: 0px 4px #009de4, 0px 10px 15px rgba(0, 0, 0, 0.2);
+#header{
+    margin: 20 0 0 0;
+    padding:5px;
+}
+#header h1{
+    font-size: 50px;
+    text-align: center;
+    font-style: italic;
+}
+    ul{
+        padding: 0;
+        list-style: none;
+        background: #f2f2f2;
+    }
+    ul li{
+        display: inline-block;
+        position: relative;
+        line-height: 21px;
+        text-align: left;
+    }
+    ul li a{
+        display: block;
+        padding: 8px 25px;
+        color: #333;
+        text-decoration: none;
+    }
+    ul li a:hover{
+        color: #fff;
+        background: #939393;
+    }
+    ul li ul.dropdown{
+        min-width: 125px; /* Set width of the dropdown */
+        background: #999999;
+        display: none;
+        position: absolute;
+        z-index: 999;
+        left: 0;
+    }
+    ul li:hover ul.dropdown{
+        display: block;	/* Display the dropdown */
+    }
+    ul li ul.dropdown li{
+        display: block;
 
-}
-#storage_table{
-    width: 220px;
-	height: auto;
-	margin: 100px auto;
-	padding: 20px 20px 9px;
-	
-	background: #9dd2ea;
-	background: linear-gradient(#9dd2ea, #8bceec);
-	border-radius: 3px;
-	box-shadow: 0px 4px #009de4, 0px 10px 15px rgba(0, 0, 0, 0.2); 
-}
+
+/*#batches{
+    text-decoration: none;
+    list-style-type: none;
+    margin: 100px auto;
+    text-align: justify;
+}*/
