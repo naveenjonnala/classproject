@@ -29,12 +29,12 @@
         </form>
 
 <input type="button" value="Add Course" id="courses" onclick="formDisplay()">
-    <table border="2" id="results" style="width:50%">
+    <table border="2" id="results" style="width:auto">
         <tr>
         <td>Name</td>
         <td>Duration</td>
         <td>Fee</td>
-            <td>Level</td>
+        <td>Level</td>
         </tr>
         
         
@@ -55,7 +55,7 @@ function addContent(){
     a.innerHTML = Name;
     
     td1.appendChild(nameLink); */
-    td1.innerHTML = '<a href="topics.html?courseName=' + name + '">' + name + '</a>';
+    td1.innerHTML = '<a href="topics.html?Name=' + name + '">' + name + '</a>';
     td2.innerHTML = document.getElementById('Duration').value;
     td3.innerHTML = document.getElementById('Fee').value;
     td4.innerHTML = document.getElementById('Level').value;
