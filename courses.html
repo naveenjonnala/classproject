@@ -55,7 +55,7 @@ function addContent(){
     a.innerHTML = Name;
     
     td1.appendChild(nameLink); */
-    td1.innerHTML = '<a href="topics.html?Name=' + name + '">' + name + '</a>';
+    td1.innerHTML = '<a href="topics.html?Name=' + name + '" onclick="directTo()">' + name + '</a>';
     td2.innerHTML = document.getElementById('Duration').value;
     td3.innerHTML = document.getElementById('Fee').value;
     td4.innerHTML = document.getElementById('Level').value;
@@ -70,6 +70,15 @@ function addContent(){
     showResults();
 
 }
+     function directTo(){
+         
+        var name = document.getElementById("Name").value;
+        switch(name){
+            case "UI":
+
+                
+        }
+     }
     
     function clearAll(){
         
@@ -88,13 +97,17 @@ function formDisplay(){
     document.getElementById("courses").style.display = "none";
     document.getElementById("results").style.display = "none";
 }
+   
+        
+
     
     function showResults(){
         document.getElementById("formid").style.display ="none";
-    document.getElementById("courses").style.display = "block";
+        document.getElementById("courses").style.display = "block";
         document.getElementById("results").style.display = "block";
             
     }
+    
         
 </script>
      </body>
