@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+     <meta charset="utf-8">
+     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css">
     <link rel= "stylesheet" href="css/main.css"/>
     <link rel= "stylesheet" href="css/courses.css.css"/>
     </head>
@@ -8,21 +13,18 @@
     <body>
         
         <form name="form" id="formid" style="display:none">
-            Name : 
-            <input type="text" id="Name" placeholder="Enter Course Name" required></br>
-            Duration :
-        <input type="text" id="Duration" placeholder="Duration of course" required></br>
-            Fee :
-        <input type="text" id="Fee" placeholder="Fee for this course" required></br>
-            Level :
-<select id="Level">
-    <option value="None">Select Level</option>
-<option value="Beginner">Beginner</option>
-    <option value="Intermediate">Intermediate</option>
-<option value="Hard">Hard</option>
-<option value="Advanced">Advanced</option>
+            CourseId : 
+            <input type="text" id="C_Id" placeholder="Enter Course Id" required></br>
+            CourseName : 
+            <input type="text" id="name" placeholder="Enter Course Name" required></br>
+            Description :
+        <input type="text" id="description" placeholder="Description of course" required></br>
+        Duration :
+        <input type="text" id="duration" placeholder="Duration of course" required></br>
 
-</select></br>
+            startDate :
+        <input type="text" id="sdate" placeholder="Course Starts from" required></br>
+
 <input type="button" value="Submit" onclick="addContent()">
 <input type="button" value="reset" onclick="clearAll()"></br>
 
@@ -31,10 +33,11 @@
 <input type="button" value="Add Course" id="courses" onclick="formDisplay()">
     <table border="2" id="results" style="width:auto">
         <tr>
-        <td>Name</td>
+        <td>Id</td>
+        <td>CourseName</td>
+        <td>Description</td>
         <td>Duration</td>
-        <td>Fee</td>
-        <td>Level</td>
+        <td>StartDate</td>
         </tr>
         
         
@@ -108,6 +111,9 @@ function formDisplay(){
             
     }
     
+   $(function() {
+    $( "#sdate" ).datepicker();
+  }); 
         
 </script>
      </body>

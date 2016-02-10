@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="demo"><h2>Let AJAX change this text</h2></div>
+
+<button type="button" onclick="loadDoc()">Change Content</button>
+
+<script>
+window.onload = loadDoc;
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+      var courseList = JSON.parse(xhttp.responseText);
+      //document.getElementById("demo").innerHTML = courseList.length;
+      createCourseListResult(courseList);
+    }
+  };
+  xhttp.open("GET", "http://localhost:10000/courses", true);
+  xhttp.send();
+}
+    
+function createCourseListResult(courseList) {
+    for (i = 0 ; i< courseList.length; i++) {
+        var aTag = document.createElement('a');
+        aTag.href = "http://localhost:10000/course/" +courseList[i].courseId + "/topics";
+        aTag.innerHTML = courseList[i].description;
+        
+        var breakLine = document.createElement('br')
+        
+        document.getElementById('demo').appendChild(aTag);
+        document.getElementById('demo').appendChild(breakLine);
+    } 
+}
+</script>
+
+</body>
+</html>
